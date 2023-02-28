@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:payza/class/img.dart';
 import 'package:payza/customWidget/fullRounedButton.dart';
 import 'package:payza/home.dart';
 import 'package:payza/main.dart';
@@ -36,12 +37,9 @@ class _IntroScreenState extends State<IntroScreen> {
         },
         controller: pageController,
         children: [
-          OnBody("img/introScreen/introOne.png",
-              "Now Easier to Make Online Pavments"),
-          OnBody("img/introScreen/introTwo.png",
-              "Secure Transactions & Reliable Anytime"),
-          OnBody("img/introScreen/intoThree.png",
-              "Let's Manage Your Financials Statement!"),
+          OnBody(AppImg.introOne, "Now Easier to Make Online Pavments"),
+          OnBody(AppImg.introTwo, "Secure Transactions & Reliable Anytime"),
+          OnBody(AppImg.introThree, "Let's Manage Your Financials Statement!"),
         ],
       ),
       bottomSheet: Container(
