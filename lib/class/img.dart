@@ -4,6 +4,7 @@ class AppImg {
   static String appLogoWithText = "img/payza.png";
 
   //introScreen
+  static String intro = "img/introScreen/intro.png";
   static String introOne = "img/introScreen/introOne.png";
   static String introTwo = "img/introScreen/introTwo.png";
   static String introThree = "img/introScreen/intoThree.png";

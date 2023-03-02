@@ -4,7 +4,7 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:payza/customWidget/appBar.dart';
 import 'package:payza/class/img.dart';
 import 'package:payza/customWidget/fullRounedButton.dart';
-import 'package:payza/oneTimeScreen/loginScreen/createAccount.dart';
+import 'package:payza/oneTimeScreen/loginScreen/cretaeAccount.dart';
 
 class LoginHome extends StatefulWidget {
   const LoginHome({super.key});
@@ -56,8 +56,8 @@ class _LoginHomeState extends State<LoginHome> {
                       children: const [
                         Expanded(
                           child: Divider(
-                            thickness: 1,
-                            color: Color.fromARGB(255, 125, 125, 125),
+                            thickness: 0.7,
+                            color: Color.fromARGB(255, 202, 202, 202),
                           ),
                         ),
                         SizedBox(
@@ -73,8 +73,8 @@ class _LoginHomeState extends State<LoginHome> {
                         ),
                         Expanded(
                           child: Divider(
-                            thickness: 1,
-                            color: Color.fromARGB(255, 125, 125, 125),
+                            thickness: 0.7,
+                            color: Color.fromARGB(255, 202, 202, 202),
                           ),
                         ),
                       ],
@@ -93,7 +93,7 @@ class _LoginHomeState extends State<LoginHome> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
+                        const Text(
                           "Don't have an account?",
                           style: TextStyle(
                               fontWeight: FontWeight.w300, fontSize: 16),
@@ -105,7 +105,7 @@ class _LoginHomeState extends State<LoginHome> {
                                 MaterialPageRoute(
                                     builder: (context) => CreateAccount()));
                           },
-                          child: Text(
+                          child: const Text(
                             "Sing up",
                             style: TextStyle(
                                 color: Color.fromARGB(255, 7, 114, 255),
@@ -127,11 +127,13 @@ class _LoginHomeState extends State<LoginHome> {
     return ElevatedButton(
       onPressed: () {},
       style: ElevatedButton.styleFrom(
+          foregroundColor: Color.fromARGB(255, 203, 203, 203),
+          shadowColor: Color.fromARGB(255, 207, 207, 207),
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(15),
-              side: BorderSide(color: Color.fromARGB(255, 130, 130, 130))),
+              side: BorderSide(color: Color.fromARGB(255, 231, 231, 231))),
           elevation: 0,
-          backgroundColor: Color.fromARGB(255, 247, 247, 247)),
+          backgroundColor: Color.fromARGB(255, 255, 255, 255)),
       child: Padding(
         padding: EdgeInsets.all(10),
         child: Row(
@@ -139,7 +141,7 @@ class _LoginHomeState extends State<LoginHome> {
           children: [
             Image(
               image: AssetImage(img),
-              height: 40,
+              height: 35,
             ),
             const SizedBox(
               width: 5,

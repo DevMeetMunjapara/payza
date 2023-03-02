@@ -5,6 +5,9 @@ import 'package:payza/class/img.dart';
 import 'package:payza/customWidget/fullRounedButton.dart';
 import 'package:payza/home.dart';
 import 'package:payza/main.dart';
+import 'package:payza/oneTimeScreen/loadingScreen.dart';
+import 'package:payza/oneTimeScreen/loginScreen/loginHome.dart';
+import 'package:payza/oneTimeScreen/loginScreen/cretaeAccount.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -43,6 +46,7 @@ class _IntroScreenState extends State<IntroScreen> {
         ],
       ),
       bottomSheet: Container(
+        color: Colors.white,
         height: 150,
         child: Padding(
             padding: EdgeInsets.fromLTRB(10, 40, 10, 1),
@@ -61,7 +65,7 @@ class _IntroScreenState extends State<IntroScreen> {
                         count: 3)),
                 isLastPage == false
                     ? FullRounedButton(
-                        title: "" "Next",
+                        title: "Next",
                         onPressed: () {
                           pageController.nextPage(
                               duration: Duration(milliseconds: 500),
@@ -78,7 +82,8 @@ class _IntroScreenState extends State<IntroScreen> {
 
                           Navigator.pushAndRemoveUntil(
                               context,
-                              MaterialPageRoute(builder: (context) => Home()),
+                              MaterialPageRoute(
+                                  builder: (context) => LoginHome()),
                               (route) => false);
                         })
               ],

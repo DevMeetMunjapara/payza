@@ -11,18 +11,16 @@ class MyAppBar extends StatelessWidget {
       toolbarHeight: 70,
       elevation: 0,
       backgroundColor: Colors.transparent,
-      leading: Padding(
-          padding: EdgeInsets.only(left: 15),
-          child: Builder(builder: (context) {
-            return IconButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                icon: Icon(
-                  Icons.arrow_back,
-                  color: Colors.black,
-                ));
-          })),
+      leading: Builder(builder: (context) {
+        return IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(
+              Icons.arrow_back,
+              color: Colors.black,
+            ));
+      }),
     );
   }
 }

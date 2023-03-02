@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "258374112430",
+    "project_id": "payza-b82b6",
+    "storage_bucket": "payza-b82b6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:258374112430:android:21f57e057b5ee80eaf093f",
+        "android_client_info": {
+          "package_name": "com.example.payza"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "258374112430-7p0i1del4b2ebh21vdfueeic8hfjf6d8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD05twojuWDS9K5AMniitIH96YfQH4CB8U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "258374112430-7p0i1del4b2ebh21vdfueeic8hfjf6d8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
