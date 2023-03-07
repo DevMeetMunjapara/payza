@@ -7,6 +7,7 @@ import 'package:payza/class/img.dart';
 import 'package:payza/customWidget/appBar.dart';
 import 'package:payza/customWidget/fullRounedButton.dart';
 import 'package:payza/oneTimeScreen/loginScreen/cretaeAccount.dart';
+import 'package:payza/oneTimeScreen/setUp.dart/resonPayza.dart';
 
 class LoginAccount extends StatefulWidget {
   const LoginAccount({super.key});
@@ -151,7 +152,15 @@ class LoginAccountState extends State<LoginAccount> {
                   const SizedBox(
                     height: 10,
                   ),
-                  FullRounedButton(title: "Sing in", onPressed: () {}),
+                  FullRounedButton(
+                      title: "Sing in",
+                      onPressed: () {
+                        Navigator.pushAndRemoveUntil(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ResonPayza()),
+                            (route) => false);
+                      }),
                   SizedBox(
                     height: 20,
                   ),

@@ -8,6 +8,7 @@ import 'package:payza/main.dart';
 import 'package:payza/oneTimeScreen/loadingScreen.dart';
 import 'package:payza/oneTimeScreen/loginScreen/loginHome.dart';
 import 'package:payza/oneTimeScreen/loginScreen/cretaeAccount.dart';
+import 'package:payza/oneTimeScreen/setUp.dart/resonPayza.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -80,10 +81,12 @@ class _IntroScreenState extends State<IntroScreen> {
                           showHome = prefs.getBool('showHome') ?? false;
                           print("---------$showHome");
 
+                          // ignore: use_build_context_synchronously
                           Navigator.pushAndRemoveUntil(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => LoginHome()),
+                                builder: (context) => const CreateAccount(),
+                              ),
                               (route) => false);
                         })
               ],

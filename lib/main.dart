@@ -22,8 +22,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(scaffoldBackgroundColor: Colors.white),
       debugShowCheckedModeBanner: false,
-      // home: LoadingScreen(),
-      home: ResonPayza(),
+      home: LoadingScreen(),
     );
   }
 }

@@ -8,6 +8,7 @@ import 'package:payza/home.dart';
 import 'package:payza/main.dart';
 import 'package:payza/oneTimeScreen/intro/introScreen.dart';
 import 'package:payza/oneTimeScreen/loginScreen/phoneVerefication.dart';
+import 'package:payza/oneTimeScreen/setUp.dart/resonPayza.dart';
 import 'package:payza/spleshScreen/spleshScreen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -35,11 +36,13 @@ class _introState extends State<Intro> {
       final bool showHome;
       showHome = prefs.getBool('showHome') ?? false;
       print("-------$showHome");
-      final _auth = FirebaseAuth.instance;
-      final user = _auth.currentUser;
-      if (user != null) {
-        Navigator.pushAndRemoveUntil(context,
-            MaterialPageRoute(builder: (context) => Home()), (route) => false);
+      // final _auth = FirebaseAuth.instance;
+      // final user = _auth.currentUser;
+      if (showHome == true) {
+        Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (context) => ResonPayza()),
+            (route) => false);
       } else {
         Navigator.pushAndRemoveUntil(
             context,
