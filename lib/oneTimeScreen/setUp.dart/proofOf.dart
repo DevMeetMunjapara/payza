@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:payza/class/img.dart';
 import 'package:payza/customWidget/appBar.dart';
 import 'package:payza/customWidget/fullRounedButton.dart';
+import 'package:payza/oneTimeScreen/setUp.dart/cameraApp.dart';
 
 class ProofOf extends StatefulWidget {
   const ProofOf({super.key});
@@ -241,7 +242,12 @@ class _ProofOfState extends State<ProofOf> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: Padding(
           padding: EdgeInsets.all(10),
-          child: FullRounedButton(title: "Continue", onPressed: () {})),
+          child: FullRounedButton(
+              title: "Continue",
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => CameraApp()));
+              })),
     );
   }
 }

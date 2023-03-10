@@ -7,12 +7,16 @@ import 'package:payza/oneTimeScreen/loginScreen/phoneVerefication.dart';
 import 'package:payza/oneTimeScreen/setUp.dart/resonPayza.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:camera/camera.dart';
 
 bool isOnboarding = false;
+late List<CameraDescription> cameras;
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  cameras = await availableCameras();
+
   runApp(MyApp());
 }
 
