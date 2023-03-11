@@ -8,14 +8,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:payza/main.dart';
 import 'package:payza/oneTimeScreen/setUp.dart/idWithProof.dart';
 
-// Future<void> main() async {
-
-//   runApp(const CameraApp());
-// }
-
-/// CameraApp is the Main Application.
 class CameraApp extends StatefulWidget {
-  /// Default Constructor
   const CameraApp({Key? key}) : super(key: key);
 
   @override
