@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:payza/oneTimeScreen/setUp.dart/showContry.dart';
 import 'package:payza/home.dart';
 import 'package:payza/oneTimeScreen/loadingScreen.dart';
 import 'package:payza/oneTimeScreen/intro/introScreen.dart';
@@ -11,6 +12,8 @@ import 'package:camera/camera.dart';
 
 bool isOnboarding = false;
 late List<CameraDescription> cameras;
+Color PrimaryColor = Color.fromARGB(255, 36, 107, 253);
+Color SecondaryColor = Color.fromARGB(255, 158, 158, 158);
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,8 +27,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(scaffoldBackgroundColor: Colors.white),
+      theme: ThemeData(
+        scaffoldBackgroundColor: Colors.white,
+      ),
       debugShowCheckedModeBanner: false,
+      // home: ShowContry(),
       home: LoadingScreen(),
     );
   }

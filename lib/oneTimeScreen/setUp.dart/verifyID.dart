@@ -4,7 +4,7 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:payza/class/img.dart';
 import 'package:payza/customWidget/appBar.dart';
 import 'package:payza/customWidget/fullRounedButton.dart';
-import 'package:payza/oneTimeScreen/setUp.dart/proofOf.dart';
+import 'package:payza/oneTimeScreen/setUp.dart/showContry.dart';
 
 class VerifyID extends StatefulWidget {
   const VerifyID({super.key});
@@ -58,8 +58,8 @@ class _VerifyIDState extends State<VerifyID> {
         child: FullRounedButton(
             title: "Verify identity",
             onPressed: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => ProofOf()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ShowContry()));
             }),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

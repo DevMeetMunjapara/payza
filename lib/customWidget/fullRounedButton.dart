@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-
-Color PrimaryColor = Color.fromARGB(255, 36, 107, 253);
-Color SecondaryColor = Color.fromARGB(255, 158, 158, 158);
+import 'package:payza/main.dart';
 
 class FullRounedButton extends StatelessWidget {
   final String title;

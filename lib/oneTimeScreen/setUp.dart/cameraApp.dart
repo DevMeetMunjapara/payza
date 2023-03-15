@@ -17,11 +17,16 @@ class CameraApp extends StatefulWidget {
 
 class _CameraAppState extends State<CameraApp> {
   late CameraController controller;
+  late Future<void> cameraVlues;
 
   @override
   void initState() {
     super.initState();
-    controller = CameraController(cameras[0], ResolutionPreset.max);
+    controller = CameraController(
+      cameras[0],
+      ResolutionPreset.ultraHigh,
+    );
+
     controller.initialize().then((_) {
       if (!mounted) {
         return;
@@ -89,130 +94,126 @@ class _CameraAppState extends State<CameraApp> {
     if (!controller.value.isInitialized) {
       return Container();
     }
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        backgroundColor: Colors.black,
-        body: Padding(
-          padding: EdgeInsets.all(10),
-          child: Container(
-            padding: EdgeInsets.all(0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                const SizedBox(
-                  height: 40,
-                ),
-                const Text(
-                  "Photo ID Card",
-                  style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.w500,
-                      color: Colors.white),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                const Text(
-                  "Please point the camera at the ID card",
-                  style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w400,
-                      color: Colors.white),
-                ),
-                const SizedBox(
-                  height: 60,
-                ),
-                CustomPaint(
-                  foregroundPainter: BorderPainter(),
-                  child: Container(
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(55)),
-                    width: double.infinity,
-                    height: 350,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(55),
-                      child: AspectRatio(
-                        aspectRatio: 1,
-                        child: CameraPreview(controller),
-                      ),
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: Padding(
+        padding: EdgeInsets.all(10),
+        child: Container(
+          padding: EdgeInsets.all(0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const SizedBox(
+                height: 40,
+              ),
+              const Text(
+                "Photo ID Card",
+                style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.white),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              const Text(
+                "Please point the camera at the ID card",
+                style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w400,
+                    color: Colors.white),
+              ),
+              const SizedBox(
+                height: 60,
+              ),
+              CustomPaint(
+                foregroundPainter: BorderPainter(),
+                child: Container(
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(55)),
+                  width: double.infinity,
+                  height: 350,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(55),
+                    child: AspectRatio(
+                      aspectRatio: 1,
+                      child: CameraPreview(controller),
                     ),
                   ),
                 ),
-              ],
-            ),
-          ),
-        ),
-        floatingActionButton: Padding(
-          padding: EdgeInsets.only(bottom: 20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                height: 60,
-                width: 60,
-                decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 241, 241, 241),
-                    borderRadius: BorderRadius.circular(40)),
-                child: IconButton(
-                    onPressed: () {
-                      pickImage();
-                    },
-                    icon: const Icon(
-                      Icons.image,
-                      color: Colors.blue,
-                    )),
               ),
-              const SizedBox(
-                width: 20,
-              ),
-              Container(
-                height: 90,
-                width: 90,
-                decoration: BoxDecoration(
-                    color: Colors.blue,
-                    borderRadius: BorderRadius.circular(50)),
-                padding: EdgeInsets.all(15),
-                child: IconButton(
-                  onPressed: () async {
-                    XFile teckImage = await controller.takePicture();
-                    print("-----------$teckImage");
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => IDWithProof(
-                                  file: teckImage,
-                                )));
-                  },
-                  iconSize: 45,
-                  icon: const Icon(
-                    Icons.camera,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-              const SizedBox(
-                width: 20,
-              ),
-              Container(
-                padding: EdgeInsets.all(10),
-                height: 60,
-                width: 60,
-                decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 241, 241, 241),
-                    borderRadius: BorderRadius.circular(40)),
-                child: IconButton(
-                    onPressed: () {
-                      pickFile();
-                    },
-                    icon: const Icon(
-                      Icons.attach_file,
-                      color: Colors.blue,
-                    )),
-              )
             ],
           ),
+        ),
+      ),
+      floatingActionButton: Padding(
+        padding: EdgeInsets.only(bottom: 20),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              height: 60,
+              width: 60,
+              decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 241, 241, 241),
+                  borderRadius: BorderRadius.circular(40)),
+              child: IconButton(
+                  onPressed: () {
+                    pickImage();
+                  },
+                  icon: const Icon(
+                    Icons.image,
+                    color: Colors.blue,
+                  )),
+            ),
+            const SizedBox(
+              width: 20,
+            ),
+            Container(
+              height: 90,
+              width: 90,
+              decoration: BoxDecoration(
+                  color: Colors.blue, borderRadius: BorderRadius.circular(50)),
+              padding: EdgeInsets.all(15),
+              child: IconButton(
+                onPressed: () async {
+                  XFile teckImage = await controller.takePicture();
+                  print("-----------$teckImage");
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => IDWithProof(
+                                file: teckImage,
+                              )));
+                },
+                iconSize: 45,
+                icon: const Icon(
+                  Icons.camera,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            const SizedBox(
+              width: 20,
+            ),
+            Container(
+              padding: EdgeInsets.all(10),
+              height: 60,
+              width: 60,
+              decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 241, 241, 241),
+                  borderRadius: BorderRadius.circular(40)),
+              child: IconButton(
+                  onPressed: () {
+                    pickFile();
+                  },
+                  icon: const Icon(
+                    Icons.attach_file,
+                    color: Colors.blue,
+                  )),
+            )
+          ],
         ),
       ),
     );
